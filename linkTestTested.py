@@ -2,12 +2,22 @@ from pydriller import Repository
 from github import Github
 import os
 
+"""
+    STEP 1 
+    Determine if a project is a maven project.
+    We achieve this by finding whether a pom.xml file exists at root directory
+"""
 def is_maven_project(repo):
     for file in repo.get_contents(''):
         if file.type == 'file' and file.name == 'pom.xml':
             return True
     return False
 
+"""
+    STEP 2
+    Run depth first search and traverse through all subdirectories.
+    Return directories that have 'main' and 'test'.
+"""
 def find_main_test_dir(repo, path):
     res = []
     has_main = False
@@ -23,6 +33,12 @@ def find_main_test_dir(repo, path):
         res.append(path)
     return res
 
+"""
+    STEP 2
+    For each valid directory retrieved from step 2.
+    Run breadth first search on both 'main' and 'test' folder
+    Check if there exists test file that ends with ClassNameTest.java
+"""
 def find_test_tested_pair(repo, path):
     # traverse through all folders and add all files into a set
     res = []
@@ -48,18 +64,18 @@ def find_test_tested_pair(repo, path):
         source_files = next_level
     return res
 
+if __name__ == '__main__':
+    REPO_NAME = "apache/spark"
+    AUTHENTICATOR = os.getenv("AUTHENTICATOR")
+    g = Github(AUTHENTICATOR)
 
-REPO_NAME = "apache/spark"
-AUTHENTICATOR = os.getenv("AUTHENTICATOR")
-g = Github(AUTHENTICATOR)
+    repo = g.get_repo(REPO_NAME)
+    print("Mining repo " + REPO_NAME + '.')
 
-repo = g.get_repo(REPO_NAME)
-print("Mining repo " + REPO_NAME + '.')
-
-if is_maven_project(repo):
-    print("Project is maven.")
-    paths = find_main_test_dir(repo, "")
-    print("Located valid directories with /main and /test folders.")
-    for path in paths:
-        test_tested_pairs = find_test_tested_pair(repo, path)
-        print(test_tested_pairs)
+    if is_maven_project(repo):
+        print("Project is maven.")
+        paths = find_main_test_dir(repo, "")
+        print("Located valid directories with /main and /test folders.")
+        for path in paths:
+            test_tested_pairs = find_test_tested_pair(repo, path)
+            print(test_tested_pairs)
