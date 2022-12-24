@@ -6,7 +6,10 @@ total_commit = 0
 commit_with_test_class = 0
 test_classes = {}
 tested_classes = {}
+modified_files_sum = 0
+modified_lines_sum = 0
 for commit in Repository(sys.argv[1]).traverse_commits():
+    # question 1 & 3
     has_test_class = 0
     for file in commit.modified_files:
         if file.change_type != ModificationType.DELETE and file.change_type != ModificationType.UNKNOWN:
@@ -21,14 +24,18 @@ for commit in Repository(sys.argv[1]).traverse_commits():
                     tested_classes[file_name_without_extension] = commit.committer_date.timestamp()
     if has_test_class:
         commit_with_test_class += 1
+    # question 2
+    modified_files_sum += len(commit.modified_files)
+    modified_lines_sum += commit.lines
     total_commit += 1
-    # if total_commit > 100:
+    # if total_commit >= 100:
     #     break
 
 print("total_commit: %d" % total_commit)
 print("commit_with_test_class: %d" % commit_with_test_class)
 print("test_classes_count: %d" % len(test_classes))
 print("tested_classes_count: %d" % len(tested_classes))
+print("modified_files_avg: %d, modified_lines_avg: %d" % (modified_files_sum / total_commit, modified_lines_sum / total_commit))
 
 test_before_count = 0
 test_same_count = 0
