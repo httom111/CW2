@@ -41,6 +41,12 @@ def parser_main(repo_url):
         print("Traversing commit " + commit.hash + ", count: " + str(ctr), end='\r')
         ctr += 1
         has_test_class = 0
+        try:
+            commit.modified_files
+        except ValueError:
+            print("\nUnable to access commit", commit.hash)
+            continue
+
         for file in commit.modified_files:
             # change_type == ModificationType.ADDED
             # what if the filename/path has changed?
@@ -141,6 +147,7 @@ if __name__ == '__main__':
         (test_before_count, test_same_count, test_after_count) = parser_main(repo_url)
 
         file_name = repo_name.split('/')[1]
-        f = open(file_name + '.txt', "w")
+        f = open("data/" + file_name + '.txt', "w")
         f.writelines(["test_before:" + str(test_before_count) + '\n', "test_same:" + str(test_same_count) + '\n', "test_after:" + str(test_after_count)])
+        f.close()
         print()
