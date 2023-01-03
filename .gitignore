@@ -3,3 +3,5 @@ lib/
 pyvenv.cfg
 .env
 .vscode
+__pycache__
+.idea/
