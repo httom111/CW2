@@ -5,3 +5,4 @@ pyvenv.cfg
 .vscode
 __pycache__
 .idea/
+legacy/
