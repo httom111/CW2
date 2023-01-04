@@ -25,7 +25,7 @@ def is_maven_project(repo):
     return False
 
 def parser_main(repo_url):
-    repo = Repository(repo_url, only_modifications_with_file_types=['.java'])
+    repo = Repository(repo_url)
     print("Connected to repo")
 
     total_commit = 0
