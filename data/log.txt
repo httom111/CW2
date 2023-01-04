@@ -1,0 +1,102 @@
+(venv) tao@ubuntu:~/Desktop/CW2-dev_shd$ python ./pydriller_test.py apache/dolphinscheduler apache/cassandra apache/shenyu apache/doris apache/shardingsphere-elasticjob
+Mining repo apache/dolphinscheduler
+Project is using maven
+Connected to repo
+Traversing commit 029d3eb81404dd0fbf89716e00dda56993dd337a, count: 4900
+Unable to access commit 029d3eb81404dd0fbf89716e00dda56993dd337a
+Traversing commit d70fdf2a65b07127057081cfce96e8d8a97b803e, count: 5001
+Unable to access commit d70fdf2a65b07127057081cfce96e8d8a97b803e
+Traversing commit b436ef0a2c7dbfcdffbeb6006430a893897f2271, count: 5004
+Unable to access commit b436ef0a2c7dbfcdffbeb6006430a893897f2271
+Traversing commit 6e818032b95409a75bf6ceaf48b4defeb91821cb, count: 5014
+Unable to access commit 6e818032b95409a75bf6ceaf48b4defeb91821cb
+Traversing commit 109e6543b9ec96180163859ed49819a958bf61e1, count: 5016
+Unable to access commit 109e6543b9ec96180163859ed49819a958bf61e1
+Traversing commit 8ebd6469e672668d47ff435daaebc3518c92c8e8, count: 5039
+Unable to access commit 8ebd6469e672668d47ff435daaebc3518c92c8e8
+Traversing commit b31ba7e18b89885c37c2129bf9b4816001f09e51, count: 5047
+Unable to access commit b31ba7e18b89885c37c2129bf9b4816001f09e51
+Traversing commit 57414c4df70d8931157d4b4608170a4784193c2a, count: 5054
+Unable to access commit 57414c4df70d8931157d4b4608170a4784193c2a
+Traversing commit cfb03ce8ee4052c799ab0ecfbccd142a09665681, count: 5138
+Unable to access commit cfb03ce8ee4052c799ab0ecfbccd142a09665681
+Traversing commit 3b495d2fb0871db0fb2945ed79f60bb9059446b5, count: 5141
+Unable to access commit 3b495d2fb0871db0fb2945ed79f60bb9059446b5
+Traversing commit 4715de11fc0996588a91f8b09da81158c844432e, count: 5169
+Unable to access commit 4715de11fc0996588a91f8b09da81158c844432e
+Traversing commit c05e407b15fd7d64fb57471e39c6647952721d4c, count: 5289
+Unable to access commit c05e407b15fd7d64fb57471e39c6647952721d4c
+Traversing commit 5855c936a4a3daafcc12b408a46b8e8470ec34c4, count: 5376
+Unable to access commit 5855c936a4a3daafcc12b408a46b8e8470ec34c4
+Traversing commit 84b004d9608637abcf67053f714941ee6b62cdf1, count: 5882
+Unable to access commit 84b004d9608637abcf67053f714941ee6b62cdf1
+Traversing commit 6a028709266fdb1f708bf320cd287b03f59d1533, count: 7005
+Unable to access commit 6a028709266fdb1f708bf320cd287b03f59d1533
+total_commit: 7578a074f7e2e6cccc0370e817e784022e86fc2cef04, count: 7593
+commit_with_test_class: 308
+test_classes_count: 641
+tested_classes_count: 1354
+modified_files_avg: 7, modified_lines_avg: 917
+test_before_count: 42, test_same_count: 153, test_after_count: 214, test_without_tested_class: 232, tested_class_without_test: 713
+
+Mining repo apache/cassandra
+Not maven: POM.xml not discovered
+Mining repo apache/shenyu
+Project is using maven
+Connected to repo
+Traversing commit f8e0b0c9ade9f505bcb7274f437616ec28967dcb, count: 502
+Unable to access commit f8e0b0c9ade9f505bcb7274f437616ec28967dcb
+Traversing commit 53f342308a26e28579651939193aec517d4be321, count: 506
+Unable to access commit 53f342308a26e28579651939193aec517d4be321
+Traversing commit ddbc1b61263191a01db6feae1e634c6a5c6d22cd, count: 509
+Unable to access commit ddbc1b61263191a01db6feae1e634c6a5c6d22cd
+Traversing commit dc9c799153cc1cc20ed22b57f45b94b22246bcfb, count: 559
+Unable to access commit dc9c799153cc1cc20ed22b57f45b94b22246bcfb
+Traversing commit ac2ce1ecc2d85420bcd39767e9045522ff9985ce, count: 560
+Unable to access commit ac2ce1ecc2d85420bcd39767e9045522ff9985ce
+Traversing commit 909bb39023ffe4ec3013ec368c80af6a80b75560, count: 561
+Unable to access commit 909bb39023ffe4ec3013ec368c80af6a80b75560
+Traversing commit c98416e56970dd870e3fa43bdd1daba2d79bec85, count: 575
+Unable to access commit c98416e56970dd870e3fa43bdd1daba2d79bec85
+Traversing commit b1a7bf96da63268925ef13d7c3329c8a67890f1c, count: 576
+Unable to access commit b1a7bf96da63268925ef13d7c3329c8a67890f1c
+Traversing commit 660e61a4d18c4d1b1641338059baf7433b2c9540, count: 690
+Unable to access commit 660e61a4d18c4d1b1641338059baf7433b2c9540
+Traversing commit e1e77790ab1b87a439cbd56b60c64f67c7007c0b, count: 838
+Unable to access commit e1e77790ab1b87a439cbd56b60c64f67c7007c0b
+Traversing commit 90f27e41ab7a4f8fa74453e069907c9971001f67, count: 910
+Unable to access commit 90f27e41ab7a4f8fa74453e069907c9971001f67
+Traversing commit 249fb1ff8711e7b531f56f89bae9650d7fb4def6, count: 927
+Unable to access commit 249fb1ff8711e7b531f56f89bae9650d7fb4def6
+Traversing commit e4a34c3da98f75aea57cad6ad37b3da0ed77c36e, count: 983
+Unable to access commit e4a34c3da98f75aea57cad6ad37b3da0ed77c36e
+Traversing commit 01d587228fffe497c8ddfe792d64c8746c025e96, count: 1077
+Unable to access commit 01d587228fffe497c8ddfe792d64c8746c025e96
+Traversing commit 9130d47ab03bc3ab903835b4987784b45b349f6e, count: 1156
+Unable to access commit 9130d47ab03bc3ab903835b4987784b45b349f6e
+Traversing commit c0ddc6cca0501f577ae1c8d8015ada5643f325f1, count: 1169
+Unable to access commit c0ddc6cca0501f577ae1c8d8015ada5643f325f1
+Traversing commit 4aa3ebd8c954e7a7c82efdea863a86e28ff29e93, count: 1371
+Unable to access commit 4aa3ebd8c954e7a7c82efdea863a86e28ff29e93
+Traversing commit 3816f1eb93f6d1d1e2a8107086f95bac6cde8a80, count: 1450
+Unable to access commit 3816f1eb93f6d1d1e2a8107086f95bac6cde8a80
+Traversing commit 2f5cc73fb7f5d491748c8258b8d69864aa9b0810, count: 1657
+Unable to access commit 2f5cc73fb7f5d491748c8258b8d69864aa9b0810
+total_commit: 2712ecc99379d5a873044a3968f58b34250a9dee160a, count: 2731
+commit_with_test_class: 405
+test_classes_count: 783
+tested_classes_count: 953
+modified_files_avg: 9, modified_lines_avg: 376
+test_before_count: 18, test_same_count: 103, test_after_count: 162, test_without_tested_class: 500, tested_class_without_test: 170
+
+Mining repo apache/doris
+Not maven: POM.xml not discovered
+Mining repo apache/shardingsphere-elasticjob
+Project is using maven
+Connected to repo
+total_commit: 2241642c8c909015b405c4e276de272b3d873af2922e, count: 2241
+commit_with_test_class: 164
+test_classes_count: 407
+tested_classes_count: 543
+modified_files_avg: 12, modified_lines_avg: 638
+test_before_count: 7, test_same_count: 75, test_after_count: 121, test_without_tested_class: 204, tested_class_without_test: 136
