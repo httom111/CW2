@@ -132,6 +132,10 @@ def parser_main(repo_url):
     return (test_before_count, test_same_count, test_after_count)
 
 if __name__ == '__main__':
+    repos = sys.argv[1:]
+    if len(repos) == 0:
+        print("Please supply the argument with repo names")
+        exit(1)
     for repo_name in sys.argv[1:]:
         repo_url = "https://github.com/" + repo_name
 
