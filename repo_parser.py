@@ -70,17 +70,19 @@ def parser_main(repo_url):
             print("\nUnable to access commit", commit.hash)
             continue
 
-        commits[commit.hash] = (commit.committer_date.timestamp(), commit.lines)
+        valid_commit = False
 
         for file in commit.modified_files:
             if file.change_type == ModificationType.ADD:
                 if is_test_file(file):
+                    valid_commit = True
                     file_without_extension = file.filename[0:len(file.filename) - 9]
                     has_test_class = True
                     if test_classes.get(file_without_extension) is None:
                         # Using commit's hash instead of timestamp
                         test_classes[file_without_extension] = commit.hash
                 elif is_tested_file(file):
+                    valid_commit = True
                     file_without_extension = file.filename[0:len(file.filename) - 5]
                     if tested_classes.get(file_without_extension) is None:
                         tested_classes[file_without_extension] = commit.hash
@@ -89,6 +91,7 @@ def parser_main(repo_url):
                 if is_test_file(file):
                     # parse the old name of the file
                     # check if the file exists in the path
+                    valid_commit = True
                     old_file_name = file.old_path.split('/')[-1]
                     old_file_without_extension = parse_test_file_name(old_file_name)
                     new_file_without_extension = parse_test_file_name(file.filename)
@@ -98,6 +101,7 @@ def parser_main(repo_url):
                     else:
                         test_classes[new_file_without_extension] = commit.hash
                 elif is_tested_file(file):
+                    valid_commit = True
                     old_file_name = file.old_path.split('/')[-1]
                     old_file_without_extension = parse_tested_file_name(old_file_name)
                     new_file_without_extension = parse_tested_file_name(file.filename)
@@ -115,7 +119,8 @@ def parser_main(repo_url):
                     file_without_extension = parse_tested_file_name(file.filename)
                     if tested_classes.get(file_without_extension) is not None:
                         del tested_classes[file_without_extension]
-
+        if valid_commit:
+            commits[commit.hash] = (commit.committer_date.timestamp(), commit.lines)
         if has_test_class:
             commit_with_test_class += 1
         # question 2

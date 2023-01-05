@@ -1,3 +1,0 @@
-test_before:65
-test_same:907
-test_after:2000
