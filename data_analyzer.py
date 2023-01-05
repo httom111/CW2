@@ -1,6 +1,7 @@
 import os
 import matplotlib.pyplot as plt
 import numpy as np
+from util import BUCKET_SIZE, BUCKET_COUNT
 
 # Read data from txt and parse it into a dictionary
 def read_data(file):
@@ -16,8 +17,8 @@ def read_data(file):
         print("Cannot read file", file)
         return None
 
-def calc_frequency(dic):
-    pass
+def calc_frequency(numerator, denominator):
+    return np.true_divide(numerator, denominator)
 
 # This is only meant for research question 1 now
 if __name__ == "__main__":
@@ -34,9 +35,9 @@ if __name__ == "__main__":
         for v in d.values():
             total += v
         labels.append(f)
-        test_before.append(np.true_divide(d["test_before"], total) * 100)
-        test_same.append(np.true_divide(d["test_same"], total) * 100)
-        test_after.append(np.true_divide(d["test_after"], total) * 100)
+        test_before.append(calc_frequency(d["test_before"], total) * 100)
+        test_same.append(calc_frequency(d["test_same"], total) * 100)
+        test_after.append(calc_frequency(d["test_after"], total) * 100)
 
     index = np.arange(len(labels))
     bar_width = 0.5
