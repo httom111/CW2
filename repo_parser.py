@@ -189,9 +189,9 @@ if __name__ == '__main__':
 
         file_name = repo_name.split('/')[1]
         f = open("data/" + file_name + '.txt', "w")
-        f.writelines(["test_before:" + str(test_before_count[i] for i in range(BUCKET_COUNT))
-                      + '\n', "test_same:" + str(test_same_count[i] for i in range(BUCKET_COUNT))
-                      + '\n', "test_after:" + str(test_after_count[i] for i in range(BUCKET_COUNT))
+        f.writelines(["test_before:" + str(sum(test_before_count))
+                      + '\n', "test_same:" + str(sum(test_same_count))
+                      + '\n', "test_after:" + str(sum(test_after_count))
                       + "\n"])
         prev_size = 0
         for i in range(BUCKET_COUNT):
