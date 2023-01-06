@@ -2,6 +2,7 @@ test_before:1
 test_same:36
 test_after:277
 commit_size:0
+<<<<<<< HEAD
 test_before:1
 test_same:16
 test_after:274
@@ -41,3 +42,16 @@ commit_size:9
 test_before:0
 test_same:0
 test_after:0
+=======
+test_before:0
+test_same:0
+test_after:0
+commit_size:1
+test_before:0
+test_same:0
+test_after:90
+commit_size:2
+test_before:1
+test_same:36
+test_after:187
+>>>>>>> dev_jxh
